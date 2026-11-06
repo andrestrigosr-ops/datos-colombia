@@ -27,6 +27,18 @@ jobs:
       - name: Instalar paquetes
         run: Rscript -e 'install.packages(c("httr", "jsonlite"))'
 
+      # El servidor del Banco no envía el certificado intermedio de DigiCert.
+      # Se baja el oficial, se comprueba que lo firma la raíz de DigiCert que
+      # ya trae el sistema y se agrega a la lista de confianza.
+      - name: Completar certificado del Banco
+        run: |
+          curl -sSf -m 60 -o geotrust.crt http://cacerts.digicert.com/GeoTrustEVRSACAG2.crt
+          openssl x509 -inform DER -in geotrust.crt -out geotrust.pem 2>/dev/null || cp geotrust.crt geotrust.pem
+          openssl verify -CAfile /etc/ssl/certs/ca-certificates.crt geotrust.pem
+          cat /etc/ssl/certs/ca-certificates.crt geotrust.pem > "$RUNNER_TEMP/ca-banrep.pem"
+          echo "CURL_CA_BUNDLE=$RUNNER_TEMP/ca-banrep.pem" >> "$GITHUB_ENV"
+          rm geotrust.crt geotrust.pem
+
       - name: Bajar series del Banco de la República
         id: datos
         run: Rscript R/actualizar.R

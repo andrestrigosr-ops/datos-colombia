@@ -40,7 +40,9 @@ dir.create("estado", showWarnings = FALSE)
 
 pedir <- function(url, intentos = 3) {
   for (k in seq_len(intentos)) {
+    ca <- Sys.getenv("CURL_CA_BUNDLE")
     r <- tryCatch(httr::GET(url, httr::user_agent(UA), httr::timeout(180),
+                            if (nzchar(ca)) httr::config(cainfo = ca),
                             httr::add_headers(Referer = REFERER, Accept = "application/json, text/plain, */*")),
                   error = function(e) e)
     if (!inherits(r, "error") && httr::status_code(r) == 200) {
