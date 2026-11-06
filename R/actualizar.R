@@ -175,7 +175,7 @@ junto <- do.call(rbind, lapply(seq_len(nrow(lista)), function(i) {
   f <- file.path("datos/banrep", paste0(lista$id[i], ".csv"))
   if (!file.exists(f)) return(NULL)
   d <- leer_csv(f)
-  data.frame(clave = lista$clave[i], id = lista$id[i], tablero = lista$tablero[i], fecha = d$fecha, valor = d$valor)
+  data.frame(clave = lista$clave[i], id = lista$id[i], tablero = lista$tablero[i], fecha = d$fecha, valor = as.numeric(d$valor))
 }))
 escribir(junto, "datos/banrep/monitor.csv")
 
