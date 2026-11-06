@@ -5,13 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          for u in https://suameca.banrep.gov.co/ \
-                   "https://suameca.banrep.gov.co/estadisticas-economicas-back/rest/estadisticaEconomicaRestService/consultaInformacionSerie?idSerie=59" \
-                   "https://totoro.banrep.gov.co/nsi-jax-ws/rest/data/ESTAT,DF_TRM_DAILY_HIST,1.0/all/ALL/?startPeriod=2026-10-01" \
-                   https://www.banrep.gov.co/ ; do
-            echo "=== $u"
-            curl -sS -m 40 -o /tmp/b -w "HTTP %{http_code} | %{size_download} bytes | %{time_total}s\n" \
-              -H "Referer: https://suameca.banrep.gov.co/descarga-multiple-de-datos/" -A "Mozilla/5.0" "$u" || echo "falló curl"
-            head -c 300 /tmp/b 2>/dev/null; echo
-          done
-          curl -s https://ipinfo.io/json | head -c 300
+          set +e
+          echo | openssl s_client -connect suameca.banrep.gov.co:443 -servername suameca.banrep.gov.co -showcerts 2>/dev/null > /tmp/chain.txt
+          grep -E "^ *[0-9] s:|^ *i:|Verify return" /tmp/chain.txt
+          openssl s_client -connect suameca.banrep.gov.co:443 -servername suameca.banrep.gov.co </dev/null 2>/dev/null | openssl x509 -noout -text | grep -A2 "Authority Information Access"
