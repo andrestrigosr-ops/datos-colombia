@@ -1,0 +1,38 @@
+clave,id,patron,tablero,nombre
+tpm,59,,monetaria,Tasa de política monetaria
+ibr_on,15324,,monetaria,IBR overnight (efectiva)
+ibr_1m,15325,,monetaria,IBR 1 mes (efectiva)
+ibr_3m,15326,,monetaria,IBR 3 meses (efectiva)
+ibr_6m,16561,,monetaria,IBR 6 meses (efectiva)
+tib,89,,monetaria,Tasa interbancaria (TIB)
+dtf,65,,monetaria,DTF 90 días (semanal)
+trm,1,,monetaria,TRM
+uvr,850,,monetaria,UVR
+colcap,6,,monetaria,COLCAP
+m1,168,,monetaria,M1 mensual
+m2,169,,monetaria,M2 mensual
+m3,170,,monetaria,M3 mensual
+cc,15136,,externo,Cuenta corriente trimestral
+cc_pib,15290,,externo,Cuenta corriente % del PIB
+bienes_serv,15135,,externo,Balanza de bienes y servicios
+ingreso_prim,15140,,externo,Ingreso primario
+ingreso_sec,15141,,externo,Ingreso secundario
+ied,15133,,externo,Inversión extranjera directa
+ied_petrolero,15377,,externo,IED sector petrolero
+ied_minero,15369,,externo,IED sector minero
+cartera,17373,,externo,Inversión de cartera
+remesas,15363,,externo,Remesas mensuales
+reservas,16850,,externo,Reservas internacionales
+itcr,235,,externo,Tasa de cambio real (ITCR IPC T)
+tdi,15360,,externo,Términos de intercambio (índices encadenados)
+tdi_ipp,17510,,externo,Términos de intercambio (IPP)
+remesas_pais,,^Ingresos Remesas de trabajadores por país de origen - ,externo,Remesas por país de origen
+deuda_pib,15328,,fiscal,Deuda bruta del GNC % del PIB
+spread_pesos,16720,,fiscal,Spread BID-ASK TES pesos
+spread_uvr,16721,,fiscal,Spread BID-ASK TES UVR
+tes_pesos_1,15272,,inflacion,TES cero cupón pesos 1 año
+tes_pesos_5,15273,,inflacion,TES cero cupón pesos 5 años
+tes_pesos_10,15274,,inflacion,TES cero cupón pesos 10 años
+tes_uvr_1,15275,,inflacion,TES cero cupón UVR 1 año
+tes_uvr_5,15276,,inflacion,TES cero cupón UVR 5 años
+tes_uvr_10,15277,,inflacion,TES cero cupón UVR 10 años
