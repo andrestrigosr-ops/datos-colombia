@@ -47,6 +47,7 @@ pedir <- function(url, intentos = 3) {
       txt <- httr::content(r, as = "text", encoding = "UTF-8")
       if (nchar(txt) > 2) return(txt)
     }
+    message("  Intento ", k, ": ", if (inherits(r, "error")) conditionMessage(r) else paste("HTTP", httr::status_code(r)))
     Sys.sleep(5 * k)
   }
   stop("No respondió: ", url)
