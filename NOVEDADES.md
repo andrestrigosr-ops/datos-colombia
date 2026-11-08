@@ -1,3 +1,3 @@
-# Sin datos nuevos (2026-11-07 00:23)
+# Sin datos nuevos (2026-11-08 00:24)
 
 Ninguna serie mensual, trimestral o anual trajo un periodo nuevo. Las diarias se actualizan sin aviso.
