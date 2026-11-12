@@ -1,1 +1,2 @@
-"clave"
+"clave","id","tablero","nombre","periodicidad","periodo_anterior","periodo_nuevo","valor"
+"itcr","235","externo","Índice de la tasa de cambio real, según IPC, ponderaciones totales (ITCRIPC (T))","Mensual","2026-09-30","2026-10-31",97.11
