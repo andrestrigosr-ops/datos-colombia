@@ -1,1 +1,5 @@
-"clave"
+"clave","id","tablero","nombre","periodicidad","periodo_anterior","periodo_nuevo","valor"
+"tdi_ipp","17510","externo","Índice de términos de intercambio, según ipp","Mensual","2026-09-30","2026-10-31",128.7
+"m1","168","monetaria","M1, mensual","Mensual","2026-09-30","2026-10-31",223742.2
+"m2","169","monetaria","M2, mensual","Mensual","2026-09-30","2026-10-31",993174.3
+"m3","170","monetaria","M3, mensual","Mensual","2026-09-30","2026-10-31",1045882.5
